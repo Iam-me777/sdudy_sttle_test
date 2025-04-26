@@ -1,0 +1,14 @@
+document.getElementById("quiz-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const results = [];
+    const questions = ['math', 'korean', 'science', 'society', 'english', 'practical'];
+    questions.forEach(question => {
+        const answer = document.querySelector(`input[name="${question}"]:checked`);
+        if (answer) {
+            results.push(`${question}: ${answer.value}`);
+        }
+    });
+
+    document.getElementById("result").innerHTML = `<h2>당신의 공부 스타일은:</h2><p>${results.join('<br>')}</p>`;
+});
