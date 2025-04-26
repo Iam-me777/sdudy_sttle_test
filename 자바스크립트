@@ -1,14 +1,34 @@
-document.getElementById("quiz-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
 
-    const results = [];
-    const questions = ['math', 'korean', 'science', 'society', 'english', 'practical'];
-    questions.forEach(question => {
-        const answer = document.querySelector(`input[name="${question}"]:checked`);
-        if (answer) {
-            results.push(`${question}: ${answer.value}`);
-        }
-    });
+h1 {
+    text-align: center;
+}
 
-    document.getElementById("result").innerHTML = `<h2>당신의 공부 스타일은:</h2><p>${results.join('<br>')}</p>`;
-});
+.question {
+    margin: 20px 0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+}
